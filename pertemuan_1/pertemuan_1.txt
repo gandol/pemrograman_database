@@ -1,0 +1,32 @@
+mysql -u root -p
+
+CREATE DATABASE pertemuan_satu;
+SHOW DTABASES;
+USE DATABASE nama_database_kalian;
+
+CREATE TABLE anggota(
+	id int(4) not null,
+	nama varchar(40) not null,
+	email varchar(40),
+	alamat text
+);
+
+DROP TABLE nama_tabel_kalian;
+DROP DATABASE nama_database_kalian;
+
+CREATE TABLE penjualan(
+	tanggal_jual date not null,
+	total int(9) DEFAULT 0
+);
+
+ALTER TABLE penjualan ADD catatan text;
+
+ALTER TABLE penjualan CHANGE nama_kolom_lama nama_kolom_baru varchar(100);
+
+ALTER TABLE nama_table drop column nama_kolom_hapus;
+
+INSERT INTO anggota (id,nama,email,alamat) values (1,'doni','','');
+
+INSERT INTO anggota (id,nama) values (1,'doni');
+
+ALTER TABLE anggota CHANGE id id int(4) primary key auto_increment;
